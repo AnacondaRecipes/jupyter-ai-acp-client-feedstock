@@ -6,28 +6,28 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/j/jupyter-ai-acp-client/jupyter_ai_acp_client-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-','_') }}-{{ version }}.tar.gz
   sha256: c53a06a0df635678e8c8faa6008e047737ed93ccfeca7e341b5ed995a65a1d8e
 
 build:
   noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python ${{ python_min }}.*
+    - python
     - pip
     - hatchling >=1.5.0
     - jupyterlab >=4.0.0,<5
     - hatch-nodejs-version >=0.3.2
     - hatch-jupyter-builder >=0.5
   run:
-    - python >=${{ python_min }}
-    - agent-client-protocol >=0.9.0,<0.10.0
-    - jupyter-ai-persona-manager >=0.0.9
-    - jupyter_server >=2.4.0,<3
-    - jupyterlab-chat >=0.20.0
+    - python
+#    - agent-client-protocol >=0.9.0,<0.10.0
+#    - jupyter-ai-persona-manager >=0.0.9
+#    - jupyter_server >=2.4.0,<3
+#    - jupyterlab-chat >=0.20.0
     - pydantic >=2,<3
 
 tests:
@@ -37,7 +37,7 @@ tests:
       pip_check: true
     requirements:
       run:
-        - python ${{ python_min }}.*
+        - python
 
 about:
   homepage: https://github.com/jupyter-ai-contrib/jupyter-ai-acp-client
