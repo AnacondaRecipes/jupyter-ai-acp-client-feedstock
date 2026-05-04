@@ -24,10 +24,10 @@ requirements:
     - hatch-jupyter-builder >=0.5
   run:
     - python
-#    - agent-client-protocol >=0.9.0,<0.10.0
-#    - jupyter-ai-persona-manager >=0.0.9
-#    - jupyter_server >=2.4.0,<3
-#    - jupyterlab-chat >=0.20.0
+    - jupyter_server >=2.4.0,<3
+    - jupyter-ai-persona-manager >=0.0.9
+    - jupyterlab-chat >=0.20.0
+    - agent-client-protocol >=0.9.0,<0.10.0
     - pydantic >=2,<3
 
 tests:
