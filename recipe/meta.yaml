@@ -42,12 +42,17 @@ test:
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
 
 about:
-  homepage: https://github.com/jupyter-ai-contrib/jupyter-ai-acp-client
-  summary: "The ACP client implementation in Jupyter AI"
+  home: https://github.com/jupyter-ai-contrib/jupyter-ai-acp-client
+  summary: The ACP client implementation in Jupyter AI
+  description: |
+    A proof-of-concept package providing a client implementation of the
+    Agent Client Protocol (ACP) in Jupyter AI v3, as well as helper classes
+    for other developers to use when custom AI personas wrapping ACP agents.
   license: BSD-3-Clause
+  license_family: BSD
   license_file: LICENSE
-  documentation: https://jupyter-ai.readthedocs.io/
-  repository: https://github.com/jupyter-ai-contrib/jupyter-ai-acp-client
+  dev_url: https://github.com/jupyter-ai-contrib/jupyter-ai-acp-client
+  doc_url: https://jupyter-ai.readthedocs.io
 
 extra:
   recipe-maintainers:
